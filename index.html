@@ -2,607 +2,626 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MOTO X | Premium Moto Shop</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #080808;
-            color: white;
-        }
-
-        /* NAVIGACIJA */
-
-        header {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.85);
-            border-bottom: 1px solid #333;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: auto;
-            height: 75px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 25px;
-        }
-
-        .logo {
-            font-size: 30px;
-            font-weight: bold;
-            color: #ff3c00;
-            letter-spacing: 3px;
-        }
-
-        .logo span {
-            color: white;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff3c00;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 50px;
-
-            background:
-                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
-                radial-gradient(circle at center, #4d1600, #080808 60%);
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero h1 {
-            font-size: 80px;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            text-shadow: 0 0 30px #ff3c00;
-        }
-
-        .hero h1 span {
-            color: #ff3c00;
-        }
-
-        .hero p {
-            margin-top: 20px;
-            font-size: 20px;
-            color: #ccc;
-        }
-
-        .hero button {
-            margin-top: 35px;
-            padding: 16px 40px;
-            background: #ff3c00;
-            border: none;
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .hero button:hover {
-            background: white;
-            color: #ff3c00;
-            transform: scale(1.05);
-        }
-
-        /* NASLOVI */
-
-        .section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 100px 25px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 45px;
-            text-transform: uppercase;
-        }
-
-        .section-title span {
-            color: #ff3c00;
-        }
-
-        .section-title p {
-            color: #999;
-            margin-top: 10px;
-        }
-
-        /* PROIZVODI */
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.4s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #ff3c00;
-            box-shadow: 0 0 30px rgba(255,60,0,0.25);
-        }
-
-        .bike {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 90px;
-            background: linear-gradient(135deg, #191919, #2b0d05);
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #999;
-            line-height: 1.5;
-        }
-
-        .price {
-            color: #ff3c00;
-            font-size: 25px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .card button {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #ff3c00;
-            background: transparent;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .card button:hover {
-            background: #ff3c00;
-        }
-
-        /* OPREMA */
-
-        .equipment {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .equipment-box {
-            padding: 35px 20px;
-            text-align: center;
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .equipment-box:hover {
-            border-color: #ff3c00;
-            transform: scale(1.04);
-        }
-
-        .equipment-box .icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        .equipment-box h3 {
-            margin-bottom: 10px;
-        }
-
-        .equipment-box p {
-            color: #888;
-        }
-
-        /* O NAMA */
-
-        .about {
-            background: #101010;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            color: #aaa;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        /* KONTAKT */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 700px;
-            margin: auto;
-            padding: 40px;
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 12px;
-        }
-
-        .contact-box p {
-            margin: 15px;
-            color: #ccc;
-        }
-
-        .contact-box strong {
-            color: #ff3c00;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #050505;
-            color: #777;
-            border-top: 1px solid #222;
-        }
-
-        footer span {
-            color: #ff3c00;
-        }
-
-        /* TELEFON */
-
-        @media (max-width: 800px) {
-
-            nav {
-                height: auto;
-                padding: 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-                letter-spacing: 4px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .equipment {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .section-title h2 {
-                font-size: 35px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .equipment {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MOTO X | Premium Moto Shop</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.9);
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff3c00;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff3c00;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.9)),
+        radial-gradient(circle at center,#4d1600,#080808 65%);
+}
+
+.hero h1 {
+    font-size: 80px;
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px #ff3c00;
+}
+
+.hero h1 span {
+    color: #ff3c00;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.main-button,
+.card button,
+.back-button {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #ff3c00;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.main-button {
+    margin-top: 35px;
+}
+
+.main-button:hover,
+.card button:hover,
+.back-button:hover {
+    background: white;
+    color: #ff3c00;
+    transform: scale(1.04);
+}
+
+/* SECTIONS */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+}
+
+.section-title span {
+    color: #ff3c00;
+}
+
+.section-title p {
+    color: #999;
+    margin-top: 10px;
+}
+
+/* MOTORI */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ff3c00;
+    box-shadow: 0 0 30px rgba(255,60,0,0.3);
+}
+
+.bike {
+    height: 230px;
+    overflow: hidden;
+}
+
+.bike img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover .bike img {
+    transform: scale(1.08);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #999;
+    line-height: 1.5;
+}
+
+.price {
+    color: #ff3c00;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.card button {
+    width: 100%;
+}
+
+/* OPREMA */
+
+.equipment {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.equipment-box {
+    padding: 35px 20px;
+    text-align: center;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.equipment-box:hover {
+    border-color: #ff3c00;
+    transform: translateY(-7px);
+    box-shadow: 0 0 25px rgba(255,60,0,0.2);
+}
+
+.equipment-box .icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.equipment-box h3 {
+    margin-bottom: 10px;
+}
+
+.equipment-box p {
+    color: #888;
+}
+
+/* DETAIL PAGE */
+
+.detail-page {
+    display: none;
+    min-height: 100vh;
+    padding: 130px 25px 80px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.detail-page.active {
+    display: block;
+}
+
+.detail-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.detail-title h2 {
+    font-size: 50px;
+}
+
+.detail-title span {
+    color: #ff3c00;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.detail-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.detail-text {
+    background: #111;
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid #292929;
+}
+
+.detail-text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.detail-text p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.detail-price {
+    color: #ff3c00;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.back-button {
+    margin-bottom: 35px;
+}
+
+/* OPREMA DETAIL */
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.item {
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.item .item-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.item h3 {
+    margin-bottom: 10px;
+}
+
+.item p {
+    color: #999;
+}
+
+.item-price {
+    color: #ff3c00;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #101010;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 12px;
+}
+
+.contact-box p {
+    margin: 15px;
+    color: #ccc;
+}
+
+.contact-box strong {
+    color: #ff3c00;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #050505;
+    color: #777;
+}
+
+footer span {
+    color: #ff3c00;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+    nav {
+        height: auto;
+        padding: 18px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .equipment {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-title h2 {
+        font-size: 38px;
+    }
+
+    .items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:500px) {
+
+    .equipment {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
+<nav>
 
-    <nav>
+<div class="logo">
+MOTO<span>X</span>
+</div>
 
-        <div class="logo">
-            MOTO<span>X</span>
-        </div>
+<ul>
+<li><a href="#pocetna" onclick="showHome()">Početna</a></li>
+<li><a href="#motori" onclick="showHome()">Motori</a></li>
+<li><a href="#oprema" onclick="showHome()">Oprema</a></li>
+<li><a href="#onama" onclick="showHome()">O nama</a></li>
+<li><a href="#kontakt" onclick="showHome()">Kontakt</a></li>
+</ul>
 
-        <ul>
-            <li><a href="#pocetna">Početna</a></li>
-            <li><a href="#motori">Motori</a></li>
-            <li><a href="#oprema">Oprema</a></li>
-            <li><a href="#onama">O nama</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-
-    </nav>
-
+</nav>
 </header>
 
 
-<!-- POČETNA -->
+<!-- GLAVNA STRANICA -->
+
+<main id="homePage">
 
 <section class="hero" id="pocetna">
 
-    <div class="hero-content">
+<div>
 
-        <h1>
-            MOTO <span>X</span>
-        </h1>
+<h1>MOTO <span>X</span></h1>
 
-        <p>
-            Mesto gde počinje tvoja sledeća avantura.
-        </p>
+<p>
+Mesto gde počinje tvoja sledeća avantura.
+</p>
 
-        <button onclick="location.href='#motori'">
-            POGLEDAJ MOTORE
-        </button>
+<a href="#motori" class="main-button">
+POGLEDAJ MOTORE
+</a>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- MOTORI -->
-
 <section class="section" id="motori">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>Naši <span>motori</span></h2>
+<h2>Naši <span>motori</span></h2>
 
-        <p>
-            Izabrani modeli za one koji traže nešto više.
-        </p>
+<p>
+Izabrani modeli za one koji traže nešto više.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="products">
+<div class="products">
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="bike">
-                🏍️
-            </div>
+<div class="bike">
+<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80">
+</div>
 
-            <div class="card-content">
+<div class="card-content">
 
-                <h3>Street 900</h3>
+<h3>Street 900</h3>
 
-                <p>
-                    Sportski naked motor sa snažnim motorom
-                    i agresivnim dizajnom.
-                </p>
+<p>
+Sportski naked motor sa snažnim motorom i agresivnim dizajnom.
+</p>
 
-                <div class="price">
-                    9.990 €
-                </div>
+<div class="price">
+9.990 €
+</div>
 
-                <button>
-                    POŠALJI UPIT
-                </button>
+<button onclick="showMotor('street')">
+POGLEDAJ MOTOR
+</button>
 
-            </div>
+</div>
+</div>
 
-        </div>
 
+<div class="card">
 
-        <div class="card">
+<div class="bike">
+<img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80">
+</div>
 
-            <div class="bike">
-                🏍️
-            </div>
+<div class="card-content">
 
-            <div class="card-content">
+<h3>BMW 1000RR</h3>
 
-                <h3>BMW 1000rr</h3>
+<p>
+Za ljubitelje brzine i sportског начина vožnje.
+</p>
 
-                <p>
-                    Za ljubitelje brzine i sportskog
-                    načina vožnje.
-                </p>
+<div class="price">
+14.500 €
+</div>
 
-                <div class="price">
-                    14.500 €
-                </div>
+<button onclick="showMotor('bmw')">
+POGLEDAJ MOTOR
+</button>
 
-                <button>
-                    POŠALJI UPIT
-                </button>
+</div>
+</div>
 
-            </div>
 
-        </div>
+<div class="card">
 
+<div class="bike">
+<img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80">
+</div>
 
-        <div class="card">
+<div class="card-content">
 
-            <div class="bike">
-                🏍️
-            </div>
+<h3>Adventure 700</h3>
 
-            <div class="card-content">
+<p>
+Napravljen za duge vožnje, putovanja i avanture.
+</p>
 
-                <h3>Adventure 700</h3>
+<div class="price">
+11.200 €
+</div>
 
-                <p>
-                    Napravljen za duge vožnje,
-                    putovanja i avanture.
-                </p>
+<button onclick="showMotor('adventure')">
+POGLEDAJ MOTOR
+</button>
 
-                <div class="price">
-                    11.200 €
-                </div>
+</div>
+</div>
 
-                <button>
-                    POŠALJI UPIT
-                </button>
 
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="bike">
-                🏍️
-            </div>
-
-            <div class="card-content">
-
-                <h3>SuperMoto 450</h3>
-
-                <p>
-                    Lagan, brz i spreman za gradsku
-                    i sportsku vožnju.
-                </p>
-
-                <div class="price">
-                    7.850 €
-                </div>
-
-                <button>
-                    POŠALJI UPIT
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="bike">
-                🏍️
-            </div>
-
-            <div class="card-content">
-
-                <h3>Classic 650</h3>
-
-                <p>
-                    Klasičan izgled uz moderan motor
-                    i savremenu tehnologiju.
-                </p>
-
-                <div class="price">
-                    8.600 €
-                </div>
-
-                <button>
-                    POŠALJI UPIT
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="bike">
-                🏍️
-            </div>
-
-            <div class="card-content">
-
-                <h3>Enduro 500</h3>
-
-                <p>
-                    Spreman za asfalt, makadam i
-                    avanturu van grada.
-                </p>
-
-                <div class="price">
-                    8.950 €
-                </div>
-
-                <button>
-                    POŠALJI UPIT
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
+</div>
 </section>
 
 
@@ -610,74 +629,65 @@
 
 <section class="section" id="oprema">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>Moto <span>oprema</span></h2>
+<h2>Moto <span>oprema</span></h2>
 
-        <p>
-            Sve što ti treba za sigurnu i udobnu vožnju.
-        </p>
+<p>
+Klikni na kategoriju da vidiš ponudu.
+</p>
 
-    </div>
-
-
-    <div class="equipment">
+</div>
 
 
-        <div class="equipment-box">
-
-            <div class="icon">🪖</div>
-
-            <h3>Kacige</h3>
-
-            <p>
-                Sportske i touring kacige.
-            </p>
-
-        </div>
+<div class="equipment">
 
 
-        <div class="equipment-box">
+<div class="equipment-box" onclick="showEquipment('kacige')">
 
-            <div class="icon">🧤</div>
+<div class="icon">🪖</div>
 
-            <h3>Rukavice</h3>
+<h3>Kaциge</h3>
 
-            <p>
-                Zaštita i udobnost tokom vožnje.
-            </p>
+<p>Sportske i touring kacige.</p>
 
-        </div>
+</div>
 
 
-        <div class="equipment-box">
+<div class="equipment-box" onclick="showEquipment('rukavice')">
 
-            <div class="icon">🥋</div>
+<div class="icon">🧤</div>
 
-            <h3>Jakne</h3>
+<h3>Rukavice</h3>
 
-            <p>
-                Moto jakne za različite uslove.
-            </p>
+<p>Zaštita i udobnost.</p>
 
-        </div>
+</div>
 
 
-        <div class="equipment-box">
+<div class="equipment-box" onclick="showEquipment('jakne')">
 
-            <div class="icon">👢</div>
+<div class="icon">🥋</div>
 
-            <h3>Čizme</h3>
+<h3>Jakne</h3>
 
-            <p>
-                Stabilnost i zaštita stopala.
-            </p>
+<p>Moto jakne za različite uslove.</p>
 
-        </div>
+</div>
 
 
-    </div>
+<div class="equipment-box" onclick="showEquipment('cizme')">
 
+<div class="icon">👢</div>
+
+<h3>Čizme</h3>
+
+<p>Zaštita i stabilnost.</p>
+
+</div>
+
+
+</div>
 </section>
 
 
@@ -685,26 +695,25 @@
 
 <section class="about" id="onama">
 
-    <div class="section">
+<div class="section">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>O <span>nama</span></h2>
+<h2>O <span>nama</span></h2>
 
-        </div>
+</div>
 
-        <div class="about-content">
+<div class="about-content">
 
-            <p>
-                MOTO X je zamišljen kao moderan moto shop
-                za ljubitelje dvotočkaša. Kod nas možeš pronaći
-                različite modele motora, kvalitetnu opremu i
-                sve što ti je potrebno za sledeću vožnju.
-            </p>
+<p>
+MOTO X je moderan moto shop za ljubitelje dvotočkaša.
+Kod nas možeš pronaći različite modele motora,
+kvalitetnu opremu i sve što ti je potrebno za sledeću vožnju.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -713,50 +722,286 @@
 
 <section class="section contact" id="kontakt">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>Kontakt <span>moto x</span></h2>
+<h2>Kontakt <span>MOTO X</span></h2>
 
-        <p>
-            Imaš pitanje? Javi nam se.
-        </p>
+<p>
+Imaš pitanje? Javi nam se.
+</p>
 
-    </div>
+</div>
+
+<div class="contact-box">
+
+<p>📞 Telefon: <strong>060/123-4567</strong></p>
+
+<p>📧 Email: <strong>motox@email.com</strong></p>
+
+<p>📸 Instagram: <strong>@motox_shop</strong></p>
+
+<p>📍 Lokacija: <strong>Beograd, Srbija</strong></p>
+
+</div>
+
+</section>
+
+</main>
 
 
-    <div class="contact-box">
+<!-- DETALJI MOTORA -->
 
-        <p>
-            📞 Telefon:
-            <strong>060/123-4567</strong>
-        </p>
+<section class="detail-page" id="motorPage">
 
-        <p>
-            📧 Email:
-            <strong>motox@email.com</strong>
-        </p>
+<button class="back-button" onclick="showHome()">
+← NAZAD
+</button>
 
-        <p>
-            📸 Instagram:
-            <strong>@motox_shop</strong>
-        </p>
+<div class="detail-title">
 
-        <p>
-            📍 Lokacija:
-            <strong>Beograd, Srbija</strong>
-        </p>
+<h2 id="motorTitle"></h2>
 
-    </div>
+</div>
+
+<div class="detail-grid">
+
+<img id="motorImage" class="detail-image">
+
+<div class="detail-text">
+
+<h3 id="motorName"></h3>
+
+<p id="motorDescription"></p>
+
+<div class="detail-price" id="motorPrice"></div>
+
+<button class="main-button" onclick="goContact()">
+POŠALJI UPIT
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ДЕТАЉИ ОПРЕМЕ -->
+
+<section class="detail-page" id="equipmentPage">
+
+<button class="back-button" onclick="showHome()">
+← NAZAD
+</button>
+
+<div class="detail-title">
+
+<h2 id="equipmentTitle"></h2>
+
+<p>
+Izaberi opremu koja ti je potrebna.
+</p>
+
+</div>
+
+<div class="items" id="equipmentItems"></div>
 
 </section>
 
 
 <footer>
 
-    © 2026 <span>MOTO X</span> | Premium Moto Shop
+© 2026 <span>MOTO X</span> | Premium Moto Shop
 
 </footer>
 
+
+<script>
+
+const motors = {
+
+street: {
+name: "Street 900",
+price: "9.990 €",
+image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80",
+description: "Sportski naked motor sa snažnim motorom, agresivnim dizajnom i odličnim performansama za gradsku i sportsku vožnju."
+},
+
+bmw: {
+name: "BMW 1000RR",
+price: "14.500 €",
+image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80",
+description: "Sportski motocikl namenjen ljubiteljima brzine, preciznosti i modernog dizajna."
+},
+
+adventure: {
+name: "Adventure 700",
+price: "11.200 €",
+image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80",
+description: "Motor napravljen za putovanja, duge vožnje i avanture na različitim terenima."
+}
+
+};
+
+
+const equipment = {
+
+kacige: {
+title: "KAСIGЕ",
+items: [
+["🪖","Sport kaciga","299 €"],
+["🪖","Touring kaciga","249 €"],
+["🪖","Carbon kaciga","499 €"]
+]
+},
+
+rukavice: {
+title: "RUKAVICE",
+items: [
+["🧤","Sport rukavice","89 €"],
+["🧤","Touring rukavice","69 €"],
+["🧤","Racing rukavice","129 €"]
+]
+},
+
+jakne: {
+title: "JAKNE",
+items: [
+["🥋","Sport moto jakna","199 €"],
+["🥋","Touring jakna","229 €"],
+["🥋","Racing jakna","349 €"]
+]
+},
+
+cizme: {
+title: "ČIZME",
+items: [
+["👢","Sport moto čizme","179 €"],
+["👢","Touring čizme","159 €"],
+["👢","Racing čizme","249 €"]
+]
+}
+
+};
+
+
+function hidePages() {
+
+document.getElementById("homePage").style.display = "none";
+
+document.getElementById("motorPage").classList.remove("active");
+
+document.getElementById("equipmentPage").classList.remove("active");
+
+}
+
+
+function showHome() {
+
+document.getElementById("homePage").style.display = "block";
+
+document.getElementById("motorPage").classList.remove("active");
+
+document.getElementById("equipmentPage").classList.remove("active");
+
+window.scrollTo(0,0);
+
+}
+
+
+function showMotor(id) {
+
+hidePages();
+
+const motor = motors[id];
+
+document.getElementById("motorTitle").innerHTML =
+motor.name;
+
+document.getElementById("motorName").innerHTML =
+motor.name;
+
+document.getElementById("motorDescription").innerHTML =
+motor.description;
+
+document.getElementById("motorPrice").innerHTML =
+motor.price;
+
+document.getElementById("motorImage").src =
+motor.image;
+
+document.getElementById("motorPage").classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+
+function showEquipment(type) {
+
+hidePages();
+
+const data = equipment[type];
+
+document.getElementById("equipmentTitle").innerHTML =
+data.title;
+
+let html = "";
+
+data.items.forEach(item => {
+
+html += `
+
+<div class="item">
+
+<div class="item-icon">
+${item[0]}
+</div>
+
+<h3>
+${item[1]}
+</h3>
+
+<p>
+Kvalitetna moto oprema za svakodnevnu i sportsku vožnju.
+</p>
+
+<div class="item-price">
+${item[2]}
+</div>
+
+<button class="main-button">
+POŠALJI UPIT
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("equipmentItems").innerHTML = html;
+
+document.getElementById("equipmentPage").classList.add("active");
+
+window.scrollTo(0,0);
+
+}
+
+
+function goContact() {
+
+showHome();
+
+setTimeout(() => {
+
+document.getElementById("kontakt").scrollIntoView();
+
+},100);
+
+}
+
+</script>
 
 </body>
 </html>
