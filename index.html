@@ -5,520 +5,477 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MOTO X | Premium Moto Shop</title>
+<title>MOTO X | Motocross Shop</title>
 
 <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-html {
-    scroll-behavior: smooth;
+body{
+    font-family:Arial, sans-serif;
+    background:#080808;
+    color:white;
 }
 
-body {
-    background: #080808;
-    color: white;
+/* NAVIGACIJA */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(0,0,0,0.9);
+    border-bottom:1px solid #ff6a00;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* HEADER */
-
-header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: rgba(0,0,0,0.9);
-    border-bottom: 1px solid #333;
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff6a00;
+    letter-spacing:3px;
 }
 
-nav {
-    max-width: 1200px;
-    margin: auto;
-    height: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ff3c00;
-    letter-spacing: 3px;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.logo span {
-    color: white;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ff3c00;
+nav a:hover{
+    color:#ff6a00;
 }
 
 /* HERO */
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px 50px;
-
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
     background:
-        linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.9)),
-        radial-gradient(circle at center,#4d1600,#080808 65%);
+        radial-gradient(circle at center,#321500 0%,#080808 55%);
 }
 
-.hero h1 {
-    font-size: 80px;
-    letter-spacing: 8px;
-    text-shadow: 0 0 30px #ff3c00;
+.hero h1{
+    font-size:80px;
+    color:#ff6a00;
+    text-shadow:0 0 30px #ff6a00;
+    letter-spacing:8px;
 }
 
-.hero h1 span {
-    color: #ff3c00;
+.hero p{
+    font-size:22px;
+    margin:20px 0 35px;
+    color:#ddd;
 }
 
-.hero p {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #ccc;
+.btn{
+    display:inline-block;
+    padding:16px 30px;
+    background:#ff6a00;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
 }
 
-.main-button,
-.card button,
-.back-button {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #ff3c00;
-    color: white;
-    border: none;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
+.btn:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 25px #ff6a00;
 }
 
-.main-button {
-    margin-top: 35px;
+/* SEKCIJE */
+
+section{
+    padding:100px 7%;
 }
 
-.main-button:hover,
-.card button:hover,
-.back-button:hover {
-    background: white;
-    color: #ff3c00;
-    transform: scale(1.04);
+.title{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:50px;
 }
 
-/* SECTIONS */
-
-.section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 100px 25px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-size: 45px;
-}
-
-.section-title span {
-    color: #ff3c00;
-}
-
-.section-title p {
-    color: #999;
-    margin-top: 10px;
+.title span{
+    color:#ff6a00;
 }
 
 /* MOTORI */
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 25px;
+.motor-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.card {
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.4s;
+.motor-card{
+    background:#111;
+    border:1px solid #222;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: #ff3c00;
-    box-shadow: 0 0 30px rgba(255,60,0,0.3);
+.motor-card:hover{
+    transform:translateY(-10px);
+    border-color:#ff6a00;
+    box-shadow:0 0 30px rgba(255,106,0,.25);
 }
 
-.bike {
-    height: 230px;
-    overflow: hidden;
+.motor-image{
+    height:240px;
+    background:linear-gradient(135deg,#252525,#101010);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80px;
 }
 
-.bike img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
+.motor-card-content{
+    padding:25px;
 }
 
-.card:hover .bike img {
-    transform: scale(1.08);
+.motor-card h3{
+    font-size:25px;
+    color:#ff6a00;
+    margin-bottom:10px;
 }
 
-.card-content {
-    padding: 25px;
+.motor-card p{
+    color:#aaa;
+    margin-bottom:20px;
 }
 
-.card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #999;
-    line-height: 1.5;
-}
-
-.price {
-    color: #ff3c00;
-    font-size: 25px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.card button {
-    width: 100%;
+.price{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
 /* OPREMA */
 
-.equipment {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
+.equipment-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.equipment-box {
-    padding: 35px 20px;
-    text-align: center;
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
+.equipment-card{
+    background:#111;
+    padding:35px 20px;
+    text-align:center;
+    border:1px solid #222;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.equipment-box:hover {
-    border-color: #ff3c00;
-    transform: translateY(-7px);
-    box-shadow: 0 0 25px rgba(255,60,0,0.2);
+.equipment-card:hover{
+    border-color:#ff6a00;
+    transform:translateY(-7px);
 }
 
-.equipment-box .icon {
-    font-size: 55px;
-    margin-bottom: 15px;
+.equipment-card .icon{
+    font-size:60px;
+    margin-bottom:20px;
 }
 
-.equipment-box h3 {
-    margin-bottom: 10px;
+.equipment-card h3{
+    color:#ff6a00;
 }
 
-.equipment-box p {
-    color: #888;
+/* DETALJI */
+
+.detail{
+    display:none;
+    min-height:100vh;
+    padding:130px 7% 80px;
+    background:
+        radial-gradient(circle at top right,#351600,#080808 45%);
 }
 
-/* DETAIL PAGE */
-
-.detail-page {
-    display: none;
-    min-height: 100vh;
-    padding: 130px 25px 80px;
-    max-width: 1100px;
-    margin: auto;
+.detail-box{
+    max-width:1100px;
+    margin:auto;
 }
 
-.detail-page.active {
-    display: block;
+.back{
+    margin-bottom:30px;
+    cursor:pointer;
+    color:#ff6a00;
+    font-weight:bold;
 }
 
-.detail-title {
-    text-align: center;
-    margin-bottom: 40px;
+.detail-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.detail-title h2 {
-    font-size: 50px;
+.detail-image{
+    height:450px;
+    background:linear-gradient(135deg,#292929,#101010);
+    border:1px solid #ff6a00;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:130px;
 }
 
-.detail-title span {
-    color: #ff3c00;
+.detail-info h1{
+    font-size:50px;
+    color:#ff6a00;
+    margin-bottom:20px;
 }
 
-.detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
+.detail-info p{
+    color:#ccc;
+    line-height:1.7;
+    margin-bottom:25px;
 }
 
-.detail-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 1px solid #333;
+.specs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:30px;
 }
 
-.detail-text {
-    background: #111;
-    padding: 35px;
-    border-radius: 15px;
-    border: 1px solid #292929;
+.spec{
+    background:#151515;
+    padding:15px;
+    border-left:3px solid #ff6a00;
 }
 
-.detail-text h3 {
-    font-size: 30px;
-    margin-bottom: 20px;
+.spec strong{
+    color:#ff6a00;
 }
 
-.detail-text p {
-    color: #aaa;
-    line-height: 1.8;
-    margin-bottom: 15px;
+/* OPREMA DETALJI */
+
+.equipment-products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:30px;
 }
 
-.detail-price {
-    color: #ff3c00;
-    font-size: 30px;
-    font-weight: bold;
-    margin: 25px 0;
+.product{
+    background:#111;
+    padding:25px;
+    border-radius:12px;
+    border:1px solid #222;
+    transition:.3s;
 }
 
-.back-button {
-    margin-bottom: 35px;
+.product:hover{
+    border-color:#ff6a00;
 }
 
-/* OPREMA DETAIL */
-
-.items {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+.product-image{
+    height:200px;
+    background:linear-gradient(135deg,#292929,#101010);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    border-radius:8px;
+    margin-bottom:20px;
 }
 
-.item {
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
+.product h3{
+    color:#ff6a00;
+    margin-bottom:10px;
 }
 
-.item .item-icon {
-    font-size: 60px;
-    margin-bottom: 15px;
+.product p{
+    color:#aaa;
+    margin-bottom:15px;
 }
 
-.item h3 {
-    margin-bottom: 10px;
+/* O NAMA */
+
+.about{
+    background:#0d0d0d;
+    text-align:center;
 }
 
-.item p {
-    color: #999;
+.about p{
+    max-width:800px;
+    margin:auto;
+    color:#bbb;
+    line-height:1.8;
+    font-size:18px;
 }
 
-.item-price {
-    color: #ff3c00;
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 15px;
+/* KONTAKT */
+
+.contact{
+    text-align:center;
 }
 
-/* ABOUT */
-
-.about {
-    background: #101010;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:#111;
+    padding:40px;
+    border-radius:15px;
+    border:1px solid #222;
 }
 
-.about-content {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+.contact-box p{
+    margin:15px;
+    color:#ccc;
+    font-size:18px;
 }
 
-.about-content p {
-    color: #aaa;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* CONTACT */
-
-.contact {
-    text-align: center;
-}
-
-.contact-box {
-    max-width: 700px;
-    margin: auto;
-    padding: 40px;
-    background: #111;
-    border: 1px solid #292929;
-    border-radius: 12px;
-}
-
-.contact-box p {
-    margin: 15px;
-    color: #ccc;
-}
-
-.contact-box strong {
-    color: #ff3c00;
+.contact-box span{
+    color:#ff6a00;
 }
 
 /* FOOTER */
 
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #050505;
-    color: #777;
+footer{
+    padding:30px;
+    text-align:center;
+    background:#050505;
+    color:#777;
 }
 
-footer span {
-    color: #ff3c00;
-}
+/* MOBILNI */
 
-/* MOBILE */
+@media(max-width:900px){
 
-@media(max-width:800px) {
-
-    nav {
-        height: auto;
-        padding: 18px;
-        flex-direction: column;
-        gap: 12px;
+    .motor-grid{
+        grid-template-columns:1fr;
     }
 
-    nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .equipment-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    nav a {
-        font-size: 13px;
+    .equipment-products{
+        grid-template-columns:1fr;
     }
 
-    .hero h1 {
-        font-size: 48px;
+    .detail-content{
+        grid-template-columns:1fr;
     }
 
-    .products {
-        grid-template-columns: 1fr;
+    nav{
+        padding:15px;
     }
 
-    .equipment {
-        grid-template-columns: 1fr 1fr;
+    nav ul{
+        gap:12px;
+        font-size:13px;
     }
 
-    .detail-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-title h2 {
-        font-size: 38px;
-    }
-
-    .items {
-        grid-template-columns: 1fr;
+    .hero h1{
+        font-size:50px;
     }
 }
 
-@media(max-width:500px) {
+@media(max-width:600px){
 
-    .equipment {
-        grid-template-columns: 1fr;
+    nav{
+        flex-direction:column;
+        gap:15px;
     }
 
-    .hero h1 {
-        font-size: 38px;
+    nav ul{
+        width:100%;
+        justify-content:center;
+        gap:10px;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .title{
+        font-size:35px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .equipment-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detail-info h1{
+        font-size:35px;
+    }
+
+    .detail-image{
+        height:300px;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVIGACIJA -->
+
 <nav>
 
-<div class="logo">
-MOTO<span>X</span>
-</div>
+<div class="logo">MOTO X</div>
 
 <ul>
-<li><a href="#pocetna" onclick="showHome()">Početna</a></li>
-<li><a href="#motori" onclick="showHome()">Motori</a></li>
-<li><a href="#oprema" onclick="showHome()">Oprema</a></li>
-<li><a href="#onama" onclick="showHome()">O nama</a></li>
-<li><a href="#kontakt" onclick="showHome()">Kontakt</a></li>
+<li><a href="#" onclick="showHome()">Početna</a></li>
+<li><a href="#motori">Motori</a></li>
+<li><a href="#oprema">Oprema</a></li>
+<li><a href="#onama">O nama</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
 </ul>
 
 </nav>
-</header>
 
 
 <!-- GLAVNA STRANICA -->
 
-<main id="homePage">
+<div id="home">
 
-<section class="hero" id="pocetna">
+<section class="hero">
 
 <div>
 
-<h1>MOTO <span>X</span></h1>
+<h1>MOTO X</h1>
 
 <p>
-Mesto gde počinje tvoja sledeća avantura.
+Mesto gde počinje tvoja sledeća kros avantura.
 </p>
 
-<a href="#motori" class="main-button">
+<a href="#motori" class="btn">
 POGLEDAJ MOTORE
 </a>
 
@@ -527,41 +484,37 @@ POGLEDAJ MOTORE
 </section>
 
 
-<section class="section" id="motori">
+<!-- MOTORI -->
 
-<div class="section-title">
+<section id="motori">
 
-<h2>Naši <span>motori</span></h2>
+<h2 class="title">
+NAŠI <span>MOTORI</span>
+</h2>
 
-<p>
-Izabrani modeli za one koji traže nešto više.
-</p>
+<div class="motor-grid">
 
+<!-- KTM -->
+
+<div class="motor-card">
+
+<div class="motor-image">
+🏍️
 </div>
 
+<div class="motor-card-content">
 
-<div class="products">
-
-
-<div class="card">
-
-<div class="bike">
-<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80">
-</div>
-
-<div class="card-content">
-
-<h3>Street 900</h3>
+<h3>KTM EXC 250 F</h3>
 
 <p>
-Sportski naked motor sa snažnim motorom i agresivnim dizajnom.
+2024 • 250 cc • 4T
 </p>
 
 <div class="price">
-9.990 €
+€9,990
 </div>
 
-<button onclick="showMotor('street')">
+<button class="btn" onclick="showMotor('ktm')">
 POGLEDAJ MOTOR
 </button>
 
@@ -569,25 +522,27 @@ POGLEDAJ MOTOR
 </div>
 
 
-<div class="card">
+<!-- TOMOS MC80 -->
 
-<div class="bike">
-<img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=80">
+<div class="motor-card">
+
+<div class="motor-image">
+🏍️
 </div>
 
-<div class="card-content">
+<div class="motor-card-content">
 
-<h3>BMW 1000RR</h3>
+<h3>TOMOS CROSS MC80</h3>
 
 <p>
-Za ljubitelje brzine i sportског начина vožnje.
+80 cc • 2T • CROSS
 </p>
 
 <div class="price">
-14.500 €
+€2,490
 </div>
 
-<button onclick="showMotor('bmw')">
+<button class="btn" onclick="showMotor('mc80')">
 POGLEDAJ MOTOR
 </button>
 
@@ -595,187 +550,202 @@ POGLEDAJ MOTOR
 </div>
 
 
-<div class="card">
+<!-- TOMOS MC50 -->
 
-<div class="bike">
-<img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80">
+<div class="motor-card">
+
+<div class="motor-image">
+🏍️
 </div>
 
-<div class="card-content">
+<div class="motor-card-content">
 
-<h3>Adventure 700</h3>
+<h3>TOMOS CROSS MC50</h3>
 
 <p>
-Napravljen za duge vožnje, putovanja i avanture.
+50 cc • 2T • CROSS
 </p>
 
 <div class="price">
-11.200 €
+€1,990
 </div>
 
-<button onclick="showMotor('adventure')">
+<button class="btn" onclick="showMotor('mc50')">
 POGLEDAJ MOTOR
 </button>
 
 </div>
 </div>
 
-
 </div>
+
 </section>
 
 
 <!-- OPREMA -->
 
-<section class="section" id="oprema">
+<section id="oprema">
 
-<div class="section-title">
+<h2 class="title">
+KROS <span>OPREMA</span>
+</h2>
 
-<h2>Moto <span>oprema</span></h2>
+<div class="equipment-grid">
 
-<p>
-Klikni na kategoriju da vidiš ponudu.
-</p>
-
+<div class="equipment-card" onclick="showEquipment('kacige')">
+<div class="icon">⛑️</div>
+<h3>KACIGE</h3>
+<p>Motocross kacige</p>
 </div>
 
-
-<div class="equipment">
-
-
-<div class="equipment-box" onclick="showEquipment('kacige')">
-
-<div class="icon">🪖</div>
-
-<h3>Kaциge</h3>
-
-<p>Sportske i touring kacige.</p>
-
-</div>
-
-
-<div class="equipment-box" onclick="showEquipment('rukavice')">
-
+<div class="equipment-card" onclick="showEquipment('rukavice')">
 <div class="icon">🧤</div>
-
-<h3>Rukavice</h3>
-
-<p>Zaštita i udobnost.</p>
-
+<h3>RUKAVICE</h3>
+<p>Kros rukavice</p>
 </div>
 
-
-<div class="equipment-box" onclick="showEquipment('jakne')">
-
+<div class="equipment-card" onclick="showEquipment('jakne')">
 <div class="icon">🥋</div>
+<h3>JAKNE</h3>
+<p>MX/enduro jakne</p>
+</div>
 
-<h3>Jakne</h3>
-
-<p>Moto jakne za različite uslove.</p>
+<div class="equipment-card" onclick="showEquipment('cizme')">
+<div class="icon">🥾</div>
+<h3>ČIZME</h3>
+<p>Motocross čizme</p>
+</div>
 
 </div>
 
-
-<div class="equipment-box" onclick="showEquipment('cizme')">
-
-<div class="icon">👢</div>
-
-<h3>Čizme</h3>
-
-<p>Zaštita i stabilnost.</p>
-
-</div>
-
-
-</div>
 </section>
 
 
 <!-- O NAMA -->
 
-<section class="about" id="onama">
+<section id="onama" class="about">
 
-<div class="section">
-
-<div class="section-title">
-
-<h2>O <span>nama</span></h2>
-
-</div>
-
-<div class="about-content">
+<h2 class="title">
+O <span>MOTO X</span>
+</h2>
 
 <p>
-MOTO X je moderan moto shop za ljubitelje dvotočkaša.
-Kod nas možeš pronaći različite modele motora,
-kvalitetnu opremu i sve što ti je potrebno za sledeću vožnju.
+
+Dobrodošao u MOTO X — mesto za sve ljubitelje
+motocross i enduro vožnje.
+
+Kod nas možeš pronaći kros motore, opremu,
+kacige, rukavice, jakne i čizme.
+
+Bilo da voziš ozbiljan enduro motor ili svoj
+stari Tomos Cross, ovde je sve napravljeno
+za ljude koji vole dva točka, blato i adrenalin.
+
 </p>
-
-</div>
-
-</div>
 
 </section>
 
 
 <!-- KONTAKT -->
 
-<section class="section contact" id="kontakt">
+<section id="kontakt" class="contact">
 
-<div class="section-title">
-
-<h2>Kontakt <span>MOTO X</span></h2>
-
-<p>
-Imaš pitanje? Javi nam se.
-</p>
-
-</div>
+<h2 class="title">
+KONTAKTIRAJ <span>NAS</span>
+</h2>
 
 <div class="contact-box">
 
-<p>📞 Telefon: <strong>060/123-4567</strong></p>
+<p>📞 <span>Telefon:</span> 060/123-4567</p>
 
-<p>📧 Email: <strong>motox@email.com</strong></p>
+<p>📧 <span>Email:</span> motox@email.com</p>
 
-<p>📸 Instagram: <strong>@motox_shop</strong></p>
+<p>📸 <span>Instagram:</span> @motox_shop</p>
 
-<p>📍 Lokacija: <strong>Beograd, Srbija</strong></p>
+<p>📍 <span>Lokacija:</span> Beograd, Srbija</p>
+
+<br>
+
+<a href="https://instagram.com/" target="_blank" class="btn">
+JAVI NAM SE
+</a>
 
 </div>
 
 </section>
 
-</main>
+</div>
 
 
 <!-- DETALJI MOTORA -->
 
-<section class="detail-page" id="motorPage">
+<section id="motorDetail" class="detail">
 
-<button class="back-button" onclick="showHome()">
+<div class="detail-box">
+
+<div class="back" onclick="showHome()">
 ← NAZAD
-</button>
+</div>
 
-<div class="detail-title">
+<div class="detail-content">
 
-<h2 id="motorTitle"></h2>
+<div class="detail-image" id="detailImage">
+🏍️
+</div>
+
+<div class="detail-info">
+
+<h1 id="detailName"></h1>
+
+<p id="detailDescription"></p>
+
+<div class="specs">
+
+<div class="spec">
+<strong>Kubikaža:</strong>
+<span id="cc"></span>
+</div>
+
+<div class="spec">
+<strong>Godište:</strong>
+<span id="year"></span>
+</div>
+
+<div class="spec">
+<strong>Snaga:</strong>
+<span id="hp"></span>
+</div>
+
+<div class="spec">
+<strong>Motor:</strong>
+<span id="engine"></span>
+</div>
+
+<div class="spec">
+<strong>Menjač:</strong>
+<span id="gearbox"></span>
+</div>
+
+<div class="spec">
+<strong>Težina:</strong>
+<span id="weight"></span>
+</div>
+
+<div class="spec">
+<strong>Rezervoar:</strong>
+<span id="tank"></span>
+</div>
+
+<div class="spec">
+<strong>Tip:</strong>
+<span id="type"></span>
+</div>
 
 </div>
 
-<div class="detail-grid">
+<div class="price" id="detailPrice"></div>
 
-<img id="motorImage" class="detail-image">
-
-<div class="detail-text">
-
-<h3 id="motorName"></h3>
-
-<p id="motorDescription"></p>
-
-<div class="detail-price" id="motorPrice"></div>
-
-<button class="main-button" onclick="goContact()">
+<button class="btn" onclick="goContact()">
 POŠALJI UPIT
 </button>
 
@@ -783,194 +753,199 @@ POŠALJI UPIT
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- ДЕТАЉИ ОПРЕМЕ -->
+<!-- DETALJI OPREME -->
 
-<section class="detail-page" id="equipmentPage">
+<section id="equipmentDetail" class="detail">
 
-<button class="back-button" onclick="showHome()">
+<div class="detail-box">
+
+<div class="back" onclick="showHome()">
 ← NAZAD
-</button>
-
-<div class="detail-title">
-
-<h2 id="equipmentTitle"></h2>
-
-<p>
-Izaberi opremu koja ti je potrebna.
-</p>
-
 </div>
 
-<div class="items" id="equipmentItems"></div>
+<h2 class="title" id="equipmentTitle"></h2>
+
+<div class="equipment-products" id="equipmentProducts"></div>
+
+</div>
 
 </section>
 
 
 <footer>
 
-© 2026 <span>MOTO X</span> | Premium Moto Shop
+© 2026 MOTO X — Motocross & Enduro Shop
 
 </footer>
 
 
 <script>
 
+/* PODACI O MOTORIMA */
+
 const motors = {
 
-street: {
-name: "Street 900",
-price: "9.990 €",
-image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80",
-description: "Sportski naked motor sa snažnim motorom, agresivnim dizajnom i odličnim performansama za gradsku i sportsku vožnju."
+ktm:{
+name:"KTM 250 EXC-F",
+cc:"250 cc",
+year:"2024",
+hp:"oko 42 KS",
+engine:"1 cilindar, 4T",
+gearbox:"6 brzina",
+weight:"oko 106 kg",
+tank:"8,5 L",
+type:"Enduro / Motocross",
+price:"€9,990",
+emoji:"🏍️",
+description:
+"KTM 250 EXC-F iz 2024. godine je lagan i snažan 4T enduro motocikl. Namenjen je vožnji po terenu, šumi, makadamu i zahtevnim kros stazama."
 },
 
-bmw: {
-name: "BMW 1000RR",
-price: "14.500 €",
-image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80",
-description: "Sportski motocikl namenjen ljubiteljima brzine, preciznosti i modernog dizajna."
+mc80:{
+name:"TOMOS CROSS MC80",
+cc:"80 cc",
+year:"1990",
+hp:"oko 7 KS",
+engine:"1 cilindar, 2T",
+gearbox:"4 brzine",
+weight:"oko 80 kg",
+tank:"6 L",
+type:"Cross",
+price:"€2,490",
+emoji:"🏍️",
+description:
+"Tomos Cross MC80 je mali i zanimljiv kros motor sa dvotaktnim agregatom. Odličan je izbor za ljubitelje starih Tomos motocikala i klasičnog cross izgleda."
 },
 
-adventure: {
-name: "Adventure 700",
-price: "11.200 €",
-image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80",
-description: "Motor napravljen za putovanja, duge vožnje i avanture na različitim terenima."
+mc50:{
+name:"TOMOS CROSS MC50",
+cc:"50 cc",
+year:"1988",
+hp:"oko 5 KS",
+engine:"1 cilindar, 2T",
+gearbox:"4 brzine",
+weight:"oko 70 kg",
+tank:"5 L",
+type:"Cross",
+price:"€1,990",
+emoji:"🏍️",
+description:
+"Tomos Cross MC50 je lagani 50 cc dvotaktni kros motor. Kompaktan, jednostavan i napravljen u klasičnom Tomos Cross stilu."
 }
 
 };
 
 
-const equipment = {
+/* PRIKAZ MOTORA */
 
-kacige: {
-title: "KAСIGЕ",
-items: [
-["🪖","Sport kaciga","299 €"],
-["🪖","Touring kaciga","249 €"],
-["🪖","Carbon kaciga","499 €"]
-]
-},
-
-rukavice: {
-title: "RUKAVICE",
-items: [
-["🧤","Sport rukavice","89 €"],
-["🧤","Touring rukavice","69 €"],
-["🧤","Racing rukavice","129 €"]
-]
-},
-
-jakne: {
-title: "JAKNE",
-items: [
-["🥋","Sport moto jakna","199 €"],
-["🥋","Touring jakna","229 €"],
-["🥋","Racing jakna","349 €"]
-]
-},
-
-cizme: {
-title: "ČIZME",
-items: [
-["👢","Sport moto čizme","179 €"],
-["👢","Touring čizme","159 €"],
-["👢","Racing čizme","249 €"]
-]
-}
-
-};
-
-
-function hidePages() {
-
-document.getElementById("homePage").style.display = "none";
-
-document.getElementById("motorPage").classList.remove("active");
-
-document.getElementById("equipmentPage").classList.remove("active");
-
-}
-
-
-function showHome() {
-
-document.getElementById("homePage").style.display = "block";
-
-document.getElementById("motorPage").classList.remove("active");
-
-document.getElementById("equipmentPage").classList.remove("active");
-
-window.scrollTo(0,0);
-
-}
-
-
-function showMotor(id) {
-
-hidePages();
+function showMotor(id){
 
 const motor = motors[id];
 
-document.getElementById("motorTitle").innerHTML =
-motor.name;
+document.getElementById("home").style.display="none";
+document.getElementById("equipmentDetail").style.display="none";
+document.getElementById("motorDetail").style.display="block";
 
-document.getElementById("motorName").innerHTML =
-motor.name;
-
-document.getElementById("motorDescription").innerHTML =
-motor.description;
-
-document.getElementById("motorPrice").innerHTML =
-motor.price;
-
-document.getElementById("motorImage").src =
-motor.image;
-
-document.getElementById("motorPage").classList.add("active");
+document.getElementById("detailName").innerText=motor.name;
+document.getElementById("detailDescription").innerText=motor.description;
+document.getElementById("cc").innerText=motor.cc;
+document.getElementById("year").innerText=motor.year;
+document.getElementById("hp").innerText=motor.hp;
+document.getElementById("engine").innerText=motor.engine;
+document.getElementById("gearbox").innerText=motor.gearbox;
+document.getElementById("weight").innerText=motor.weight;
+document.getElementById("tank").innerText=motor.tank;
+document.getElementById("type").innerText=motor.type;
+document.getElementById("detailPrice").innerText=motor.price;
+document.getElementById("detailImage").innerText=motor.emoji;
 
 window.scrollTo(0,0);
 
 }
 
 
-function showEquipment(type) {
+/* OPREMA */
 
-hidePages();
+const equipment={
 
-const data = equipment[type];
+kacige:{
+title:"KROS KACIGE",
+items:[
+["KTM FACTORY MX HELMET","Kros kaciga za ozbiljnu vožnju.","€249"],
+["FOX V1","Lagani motocross model.","€189"],
+["ALPINESTARS MX","MX kaciga modernog dizajna.","€229"]
+]
+},
 
-document.getElementById("equipmentTitle").innerHTML =
+rukavice:{
+title:"KROS RUKAVICE",
+items:[
+["FOX 360 RUKAVICE","Tanke i lagane MX rukavice.","€39"],
+["KTM FACTORY RUKAVICE","Kros rukavice u KTM stilu.","€49"],
+["ALPINESTARS TECH","Rukavice za enduro i motocross.","€45"]
+]
+},
+
+jakne:{
+title:"KROS JAKNE",
+items:[
+["KTM RACING JAKNA","MX/enduro jakna sportskog dizajna.","€149"],
+["FOX MX JAKNA","Lagani model za vožnju po terenu.","€129"],
+["ENDURO PRO JAKNA","Jakna za enduro i kros vožnju.","€159"]
+]
+},
+
+cizme:{
+title:"MOTOCROSS ČIZME",
+items:[
+["ALPINESTARS TECH 7","Čizme za motocross i enduro.","€349"],
+["FOX COMP BOOTS","Kros čizme sa zaštitom.","€279"],
+["KTM FACTORY BOOTS","Motocross čizme sportskog dizajna.","€329"]
+]
+}
+
+};
+
+
+/* PRIKAZ OPREME */
+
+function showEquipment(type){
+
+const data=equipment[type];
+
+document.getElementById("home").style.display="none";
+document.getElementById("motorDetail").style.display="none";
+document.getElementById("equipmentDetail").style.display="block";
+
+document.getElementById("equipmentTitle").innerHTML=
 data.title;
 
-let html = "";
+let html="";
 
-data.items.forEach(item => {
+data.items.forEach(item=>{
 
-html += `
+html+=`
 
-<div class="item">
+<div class="product">
 
-<div class="item-icon">
-${item[0]}
+<div class="product-image">
+🏁
 </div>
 
-<h3>
-${item[1]}
-</h3>
+<h3>${item[0]}</h3>
 
-<p>
-Kvalitetna moto oprema za svakodnevnu i sportsku vožnju.
-</p>
+<p>${item[1]}</p>
 
-<div class="item-price">
+<div class="price">
 ${item[2]}
 </div>
 
-<button class="main-button">
+<button class="btn" onclick="goContact()">
 POŠALJI UPIT
 </button>
 
@@ -980,22 +955,36 @@ POŠALJI UPIT
 
 });
 
-document.getElementById("equipmentItems").innerHTML = html;
-
-document.getElementById("equipmentPage").classList.add("active");
+document.getElementById("equipmentProducts").innerHTML=html;
 
 window.scrollTo(0,0);
 
 }
 
 
-function goContact() {
+/* POČETNA */
+
+function showHome(){
+
+document.getElementById("home").style.display="block";
+document.getElementById("motorDetail").style.display="none";
+document.getElementById("equipmentDetail").style.display="none";
+
+window.scrollTo(0,0);
+
+}
+
+
+/* KONTAKT */
+
+function goContact(){
 
 showHome();
 
-setTimeout(() => {
+setTimeout(()=>{
 
-document.getElementById("kontakt").scrollIntoView();
+document.getElementById("kontakt")
+.scrollIntoView();
 
 },100);
 
